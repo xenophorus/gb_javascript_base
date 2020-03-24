@@ -4,15 +4,14 @@
     font-family: sans-serif;
 }
 
-.modal_overlay {
-    display: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
 .modal_window {
+/*    display: none; */
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    z-index: 1;
     width: 500px;
-    height: 350px;
+    height: 250px;
     background-color: #bbb;
 }
 .modal_header {
@@ -20,28 +19,33 @@
     border-bottom: 1px solid black;
 }
 .modal_header_caption {
-    height: 50px;
+    height: 35px;
     width: 440px;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    vertical-align: center;
 }
 .modal_btn_close {
-    height: 50px;
+    height: 35px;
     width: 60px;
     color: black;
     font-size: 30px;
     text-align: center;
-    vertical-align: center;
+    background-color: green;
+    position: absolute;
+    top: 0;
+    left: 440px;
 }
 .modal_text {
     font-size: 16px;
     width: 500px;
-    height: 245px;
-}
-
-.modal_footer {
-    width: 500px;
-    height: 50px;
-    vertical-align: center;
-    text-align: center;
+    height: 215px;
+    background-color: blue;
+    position: absolute;
+    top: 35px;
+    left: 0;
 }
 
 .header {
