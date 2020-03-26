@@ -7,44 +7,28 @@
 
 </head>
 <body>
+<div class="modal_overlay" id="modalWin">
+    <div class="modal" id="modal_window">
+        <div class="modal_header">
+                Lorem ipsum dolor sit.
+        </div>
+        <div class="modal_text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores enim esse excepturi
+            exercitationem fugiat ipsa minima nesciunt, nostrum optio porro possimus praesentium quas quia quibusdam
+            ratione rem saepe sed veritatis vitae. Adipisci aspernatur at deleniti dicta eius error, eveniet fuga
+            laborum nostrum pariatur perspiciatis praesentium quaerat sequi totam voluptates.
+        </div>
+        <div class="modal_footer">
+            <input type="button" value="Закрыть окно" class="btn" onclick='closeModal()' id="btn2">
 
-<div class="header"><h2>Задание № 5</h2></div>
-<div class="content">
-    <input type="button" value="Открыть окно" class="btn" onclick='showModal()' id="bth11">
-    <script>
-        'use strict';
-
-        let modalWindow = document.getElementsByClassName('modal_overlay');
-
-        function showModal() {
-            console.log('clicked');
-            modal.style.display = 'block';
-        }
-
-        function hideModal() {
-            modal.style.display = 'none';
-        }
-    </script>
-
-    <div class="modal_overlay">
-        <div class="modal" id="modal_window">
-            <div class="modal_header">
-                <div class="modal_header_caption">
-                    Lorem ipsum dolor sit.
-                </div>
-                <div class="modal_btn_close" onclick="hideModal()">×</div>
-            </div>
-            <div class="modal_text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolores enim esse excepturi
-                exercitationem fugiat ipsa minima nesciunt, nostrum optio porro possimus praesentium quas quia quibusdam
-                ratione rem saepe sed veritatis vitae. Adipisci aspernatur at deleniti dicta eius error, eveniet fuga
-                laborum nostrum pariatur perspiciatis praesentium quaerat sequi totam voluptates.
-            </div>
-            <div class="modal_footer">
-                Закрыть окно
-            </div>
         </div>
     </div>
+</div>
+<div class="header"><h2>Задание № 5</h2></div>
+<div class="content">
+    <input type="button" value="Открыть окно" class="btn" onclick='showModal()' id="btn1">
+
+
 </div>
 <script src="hw1.js"></script>
 </body>
