@@ -4,8 +4,9 @@
     font-family: sans-serif;
 }
 
-body {
+.content {
     width: 1000px;
+    margin: auto;
 }
 
 .modal_overlay {
@@ -57,4 +58,41 @@ body {
 .btn {
     width: 150px;
     height: 40px;
+}
+
+.task1 {
+    height: 100px;
+}
+
+
+.commodity {
+    position: relative;
+    width: 320px;
+    height: 350px;
+    float: left;
+    margin-left: 10px;
+    background-color: #eeeeee;
+
+}
+
+.image {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.descr {
+    position: absolute;
+    background-color: #eee;
+    width: 300px;
+    height: 300px;
+    display: none;
+    margin-left: 10px;
+}
+
+.descriptioner {
+    position: absolute;
+    top: 310px;
+    margin-left: 10px;
 }
