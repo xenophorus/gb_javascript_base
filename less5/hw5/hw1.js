@@ -10,4 +10,3 @@ function showModal() {
 function closeModal() {
     modalWindow.style.display = 'none';
 }
-
