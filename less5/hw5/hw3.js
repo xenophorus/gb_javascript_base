@@ -11,6 +11,10 @@ function createChessboard(n, a) {
         chRow.setAttribute('id', 'r' + (i));
         chessTable.appendChild(chRow);
         let row = chessTable.lastElementChild;
+        /*
+        * Пришлось придумать вот такую странную логику заполнения доски - если ряд заканчивается на белую клетку,
+        * следующий начинается с такой же. Вот для того переменная 'a' и нужна. Здесь меняется начало ряда
+        * */
         if (a === 1) {
             a--;
         } else {
@@ -22,6 +26,10 @@ function createChessboard(n, a) {
             chCell.setAttribute('id', ('c' + i) + j);
             row.appendChild(chCell);
 
+            /*
+            * Хотел добавить span для обозначения координат клеток, и добавил, но потом нечаянно его убил)
+            * А было бы красивее
+            * */
             if (j === 0 && i === 0) {
                 row.lastElementChild.classList.add('cellZero');
             } else if (j === 0 && i !== 0) {
@@ -46,6 +54,7 @@ function createChessboard(n, a) {
 
 
 function fillChessboard() {
+    /* Картинки. Шрифтом мне не понравилось. */
     let imgWPawn = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/45px-Chess_plt45.svg.png';
     let imgWKnight = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chess_nlt45.svg/45px-Chess_nlt45.svg.png';
     let imgWBishop = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Chess_blt45.svg/45px-Chess_blt45.svg.png';
@@ -58,6 +67,11 @@ function fillChessboard() {
     let imgBRook = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Chess_rdt45.svg/50px-Chess_rdt45.svg.png';
     let imgBQueen = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Chess_qdt45.svg/50px-Chess_qdt45.svg.png';
     let imgBKing = 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/50px-Chess_kdt45.svg.png';
+    /*
+    * Если бы надо было писать игру в шахматы, я бы решил заполнение через объекты.
+    * Тогда фигурами можно было бы управлять. Но в 3 ночи я пошел не по лучшему, а по простейшему решению -
+    * правильная расстановка в списке и заполнение через цикл
+    * */
     let whFigures = [imgWPawn, imgWRook, imgWKnight, imgWBishop, imgWQueen, imgWKing, imgWBishop, imgWKnight, imgWRook];
     let blFigures = [imgBPawn, imgBRook, imgBKnight, imgBBishop, imgBQueen, imgBKing, imgBBishop, imgBKnight, imgBRook];
 
