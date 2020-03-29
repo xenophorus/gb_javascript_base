@@ -5,7 +5,7 @@
 * как указано в задании. Это дает, например, возможность привязать к элементам БД.
 */
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 6; i++) {
     let imageSrc = document.createElement('img');
     imageSrc.setAttribute('src', 'https://blog.gemalto.com/wp-content/uploads/2019/12/FRT-monkey-sqr-300x300.jpg');
     let divCommodity = document.createElement('div');
