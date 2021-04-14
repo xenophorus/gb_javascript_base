@@ -34,10 +34,23 @@ let renderer = {
     }
 };
 
-/**
- * Функция проверяет позицию игрока и при выходе за границу выводит его с другой стороны
- * @param n
- * @returns {*}
+/*
+ Функция проверяет позицию игрока и при выходе за границу выводит его с другой стороны
+ Я это сделал еще до того, как прочел задание, поэтому решил так и оставить. Для точного выполнения задания
+ надо:
+ if (n.x < 0) {
+      n.x = 0
+    }
+ if (n.y < 0) {
+        n.y = 0
+    }
+ if (n.x > config.rowsCount - 1) {
+        n.x = config.rowsCount - 1
+    }
+ if (n.y > config.colsCount - 1) {
+        n.y = config.colsCount - 1
+    }
+ return (n);
  */
 function positionChecker(n) {
     if (n.x < 0) {
@@ -66,18 +79,23 @@ const player = {
     },
 };
 
+/*    2* (это задание по желанию). Для игры бродилка, добавить возможность ходить по
+диагонали цифрами 1, 3, 7, 9.
+Также необходимо сделать так, чтобы пользователь не мог совершить шаг в стенку, т.е. при направлении в
+стенку и игрок оставался на том же месте где стоял.
+*/
 
 //***********mover.js
 let mover = {
     getDirection() {
-        let availDirections = [2, 4, 6, 8];
+        let availDirections = [2, 4, 6, 8, 1, 3, 7, 9];
         while (true) {
             let direction = parseInt(prompt('Введите число (2, 4, 6, 8) для направления, "Отмена" для выхода'));
             if (isNaN(direction)) {
                 return null;
             }
             if (!availDirections.includes(direction)) {
-                alert('Для перемещения необходимо ввести число (2, 4, 6, 8)');
+                alert('Для перемещения необходимо ввести число (1, 2, 3, 4, 6, 7, 8, 9)');
                 continue;
             }
             return direction;
@@ -100,6 +118,22 @@ let mover = {
                 break;
             case 8:
                 nextPos.y--;
+                break;
+            case 1:
+                nextPos.y++;
+                nextPos.x--;
+                break;
+            case 3:
+                nextPos.y++;
+                nextPos.x++;
+                break;
+            case 7:
+                nextPos.y--;
+                nextPos.x--;
+                break;
+            case 9:
+                nextPos.y--;
+                nextPos.x++;
                 break;
         }
         positionChecker(nextPos);
